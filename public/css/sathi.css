@@ -1,0 +1,486 @@
+/* ===================================================================
+   SATHI AI CHATBOT — PREMIUM COLORFUL FUTURISTIC DESIGN SYSTEM
+   Base: Deep Midnight Purple & Indigo
+   Accents: Electric Blue, Neon Pink, Violet, Cyan, Turquoise
+   =================================================================== */
+
+.sathi-container {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - var(--header-height) - var(--nav-height) - 10px);
+  min-height: 580px;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background: #0d0722;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  box-shadow: 0 15px 45px rgba(13, 7, 34, 0.8), 0 0 35px rgba(168, 85, 247, 0.15);
+  overflow: hidden;
+}
+
+/* 1. Animated Aurora Waves & Mesh Background */
+.sathi-aurora-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  background: radial-gradient(circle at 10% 20%, rgba(30, 16, 70, 0.9) 0%, rgba(13, 7, 34, 1) 100%);
+}
+
+.sathi-aurora-wave {
+  position: absolute;
+  filter: blur(60px);
+  opacity: 0.5;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.sathi-aurora-wave.wave-1 {
+  width: 380px;
+  height: 380px;
+  top: -100px;
+  left: -80px;
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  animation: auroraFlow1 16s ease-in-out infinite alternate;
+}
+
+.sathi-aurora-wave.wave-2 {
+  width: 420px;
+  height: 420px;
+  bottom: -120px;
+  right: -100px;
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+  animation: auroraFlow2 18s ease-in-out infinite alternate;
+}
+
+.sathi-aurora-wave.wave-3 {
+  width: 320px;
+  height: 320px;
+  top: 40%;
+  left: 30%;
+  background: linear-gradient(135deg, #ec4899, #8b5cf6, #10e759);
+  opacity: 0.25;
+  animation: auroraFlow3 22s ease-in-out infinite alternate;
+}
+
+@keyframes auroraFlow1 {
+  0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  50% { transform: translate(60px, 40px) scale(1.15) rotate(45deg); }
+  100% { transform: translate(-30px, 80px) scale(0.9) rotate(90deg); }
+}
+
+@keyframes auroraFlow2 {
+  0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  50% { transform: translate(-50px, -60px) scale(1.2) rotate(-40deg); }
+  100% { transform: translate(40px, -40px) scale(0.95) rotate(-80deg); }
+}
+
+@keyframes auroraFlow3 {
+  0% { transform: translate(0, 0) scale(0.9); }
+  50% { transform: translate(40px, -30px) scale(1.1); }
+  100% { transform: translate(-40px, 30px) scale(0.85); }
+}
+
+/* 2. SATHI Header & Brand Identity */
+.sathi-header {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background: rgba(20, 12, 52, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.sathi-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Glowing Animated AI Companion Orb */
+.sathi-orb {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a855f7, #ec4899, #06b6d4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.6), 0 0 35px rgba(168, 85, 247, 0.4);
+  animation: orbPulseGlow 3s infinite alternate ease-in-out;
+}
+
+.sathi-orb::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px dashed rgba(236, 72, 153, 0.5);
+  animation: orbSpin 12s linear infinite;
+}
+
+.sathi-orb-face {
+  width: 20px;
+  height: 20px;
+  fill: #ffffff;
+}
+
+@keyframes orbPulseGlow {
+  0% { transform: scale(0.98); box-shadow: 0 0 15px rgba(236, 72, 153, 0.5), 0 0 30px rgba(168, 85, 247, 0.3); }
+  100% { transform: scale(1.05); box-shadow: 0 0 28px rgba(236, 72, 153, 0.8), 0 0 45px rgba(6, 182, 212, 0.6); }
+}
+
+@keyframes orbSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.sathi-meta h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #fdf4ff 0%, #f472b6 50%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sathi-meta p {
+  font-size: 0.75rem;
+  color: #c084fc;
+  font-weight: 500;
+}
+
+.sathi-status-pill {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #34d399;
+  background: rgba(52, 211, 153, 0.12);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+}
+
+.status-dot-pulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 8px #34d399;
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+
+/* Chat Mode Switcher Tabs */
+.sathi-mode-selector {
+  display: flex;
+  background: rgba(13, 7, 34, 0.6);
+  padding: 3px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.mode-btn {
+  background: transparent;
+  border: none;
+  color: #cbd5e1;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mode-btn.active {
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  color: #ffffff;
+  box-shadow: 0 2px 10px rgba(236, 72, 153, 0.4);
+}
+
+/* 3. Messages Conversation Scroll Area */
+.sathi-messages-pane {
+  position: relative;
+  z-index: 5;
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  scroll-behavior: smooth;
+}
+
+/* Message Bubbles */
+.chat-msg {
+  display: flex;
+  gap: 12px;
+  max-width: 85%;
+  animation: msgEntrance 0.3s ease-out forwards;
+}
+
+@keyframes msgEntrance {
+  from { opacity: 0; transform: translateY(10px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.chat-msg.msg-sathi {
+  align-self: flex-start;
+}
+
+.chat-msg.msg-user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.chat-avatar-mini {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.msg-sathi .chat-avatar-mini {
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  color: #fff;
+  box-shadow: 0 0 12px rgba(236, 72, 153, 0.5);
+}
+
+.msg-user .chat-avatar-mini {
+  background: linear-gradient(135deg, #06b6d4, #10e759);
+  color: #061e0e;
+}
+
+.msg-bubble {
+  padding: 14px 18px;
+  border-radius: 18px;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  position: relative;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* SATHI Bubble: Purple and Pink Gradient */
+.msg-sathi .msg-bubble {
+  background: linear-gradient(145deg, rgba(32, 17, 72, 0.85) 0%, rgba(46, 21, 94, 0.75) 100%);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  color: #f8fafc;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(168, 85, 247, 0.1);
+}
+
+.msg-sathi .msg-bubble strong {
+  color: #f472b6;
+}
+
+.msg-sathi .msg-bubble ul, .msg-sathi .msg-bubble ol {
+  margin-left: 20px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.msg-sathi .msg-bubble li {
+  margin-bottom: 4px;
+}
+
+/* User Bubble: Electric Blue and Teal Gradient */
+.msg-user .msg-bubble {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.85) 0%, rgba(14, 165, 233, 0.8) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #ffffff;
+  border-bottom-right-radius: 4px;
+  box-shadow: 0 4px 20px rgba(6, 182, 212, 0.25);
+}
+
+.msg-time {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 5px;
+  text-align: right;
+}
+
+/* Typing Indicator */
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 16px;
+  background: rgba(32, 17, 72, 0.7);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: var(--radius-full);
+  width: fit-content;
+}
+
+.typing-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #f472b6;
+  animation: typingBounce 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+  background: #a855f7;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+  background: #06b6d4;
+}
+
+@keyframes typingBounce {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+  40% { transform: translateY(-6px); opacity: 1; }
+}
+
+/* 4. Interactive Quick Action Cards */
+.sathi-quick-actions-bar {
+  position: relative;
+  z-index: 5;
+  padding: 8px 16px;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  background: rgba(18, 10, 44, 0.6);
+  border-top: 1px solid rgba(168, 85, 247, 0.15);
+}
+.sathi-quick-actions-bar::-webkit-scrollbar { display: none; }
+
+.sathi-action-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: rgba(30, 16, 70, 0.8);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  color: #e2e8f0;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.sathi-action-chip:hover {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.4), rgba(236, 72, 153, 0.4));
+  border-color: #ec4899;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
+  color: #ffffff;
+}
+
+/* 5. Message Input Bar */
+.sathi-input-bar {
+  position: relative;
+  z-index: 10;
+  padding: 12px 18px 16px 18px;
+  background: rgba(18, 10, 44, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.sathi-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(10, 5, 26, 0.85);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  border-radius: var(--radius-xl);
+  padding: 6px 8px 6px 18px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.sathi-input-wrapper:focus-within {
+  border-color: #ec4899;
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.35), 0 0 35px rgba(168, 85, 247, 0.2);
+}
+
+.sathi-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #f8fafc;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: 8px 0;
+}
+
+.sathi-input::placeholder {
+  color: #94a3b8;
+}
+
+.btn-send-sathi {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 15px rgba(236, 72, 153, 0.5);
+  flex-shrink: 0;
+}
+
+.btn-send-sathi:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(236, 72, 153, 0.8);
+}
+
+.btn-send-sathi:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-send-sathi svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .sathi-aurora-wave,
+  .sathi-orb,
+  .sathi-orb::after,
+  .typing-dot,
+  .status-dot-pulse {
+    animation: none !important;
+  }
+}
